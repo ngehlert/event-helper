@@ -28,7 +28,7 @@
  * The last helper methods simply allows you to register a one time event. This event will automatically deregister itself
  * after being executed once
  */
-declare class SimpleEventHelper {
+declare class EventHelper {
     /**
      * Stack that holds events until they are eventually deregistered
      */
@@ -57,4 +57,4 @@ declare class SimpleEventHelper {
      */
     static oneTimeEventListener(node: Node, eventName: string, callback: (event: Event) => any): void;
 }
-export { SimpleEventHelper };
+export { EventHelper };

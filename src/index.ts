@@ -1,1 +1,1 @@
-export * from './simple-event-helper';
+export * from './event-helper';

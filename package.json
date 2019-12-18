@@ -1,12 +1,12 @@
 {
-  "name": "simple-event-helper",
+  "name": "@ngehlert/event-helper",
   "version": "1.0.0",
   "description": "A simple helper class to handle Event Listeners",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
     "test": "jest --config jestconfig.json",
-    "build": "tsc",
+    "build": "rm -rf lib && tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",

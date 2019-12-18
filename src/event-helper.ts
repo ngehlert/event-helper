@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Helper class for easier registering and deregistering of events
  *
@@ -30,7 +28,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * The last helper methods simply allows you to register a one time event. This event will automatically deregister itself
  * after being executed once
  */
-class SimpleEventHelper {
+class EventHelper {
+    /**
+     * Stack that holds events until they are eventually deregistered
+     */
+    private static eventCallbacks: Map<
+        string,
+        { node: Node; callback: (event: Event) => any; eventName: string }
+    > = new Map();
+
     /**
      * Registers a new event listener and adds it to the stack.
      *
@@ -39,8 +45,13 @@ class SimpleEventHelper {
      * @param {string} eventName of the DOM Event that triggers the action. For example keydown, keyup, mousedown, etc.
      * @param callback that will eventually be executed.
      */
-    static addEventListener(name, node, eventName, callback) {
-        const callbackListener = (event) => {
+    public static addEventListener(
+        name: string,
+        node: Node,
+        eventName: string,
+        callback: (event: Event) => any,
+    ) {
+        const callbackListener: any = (event: Event) => {
             return callback(event);
         };
         node.addEventListener(eventName, callbackListener);
@@ -50,18 +61,22 @@ class SimpleEventHelper {
             callback: callbackListener,
         });
     }
+
     /**
      * Removes an existing event listener
      *
      * @param {string} name of the event
      */
-    static removeEventListener(name) {
-        const entry = this.eventCallbacks.get(name);
+    public static removeEventListener(name: string) {
+        const entry:
+            | { node: Node; callback: any; eventName: string }
+            | undefined = this.eventCallbacks.get(name);
         if (entry) {
             entry.node.removeEventListener(entry.eventName, entry.callback);
             this.eventCallbacks.delete(name);
         }
     }
+
     /**
      * Registers a one time event that will automatically deregister itself after being executed once
      *
@@ -69,16 +84,18 @@ class SimpleEventHelper {
      * @param {string} eventName of the DOM Event that triggers the action. For example keydown, keyup, mousedown, etc.
      * @param callback that will eventually be executed.
      */
-    static oneTimeEventListener(node, eventName, callback) {
-        const callbackListener = (event) => {
+    public static oneTimeEventListener(
+        node: Node,
+        eventName: string,
+        callback: (event: Event) => any,
+    ) {
+        const callbackListener: any = (event: Event) => {
             node.removeEventListener(eventName, callbackListener);
+
             return callback(event);
         };
         node.addEventListener(eventName, callbackListener);
     }
 }
-exports.SimpleEventHelper = SimpleEventHelper;
-/**
- * Stack that holds events until they are eventually deregistered
- */
-SimpleEventHelper.eventCallbacks = new Map();
+
+export { EventHelper };
