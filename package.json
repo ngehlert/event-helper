@@ -1,0 +1,42 @@
+{
+  "name": "simple-event-helper",
+  "version": "1.0.0",
+  "description": "A simple helper class to handle Event Listeners",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version" : "npm run format && git add -A src",
+    "postversion" : "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngehlert/simple-event-helper.git"
+  },
+  "keywords": ["Event Handler", "Simple", "Simple Event Handler", "Event Listener", "Listener"],
+  "files": [
+    "lib/**/*"
+  ],
+  "author": "Nicolas Gehlert <info@ngehlert.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ngehlert/simple-event-helper/issues"
+  },
+  "homepage": "https://github.com/ngehlert/simple-event-helper#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.24",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "ts-jest": "^24.2.0",
+    "tslint": "^5.20.1",
+    "tslint-config-airbnb": "^5.11.2",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.7.3"
+  }
+}
