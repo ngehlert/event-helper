@@ -1,6 +1,6 @@
 {
   "name": "@ngehlert/event-helper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple helper class to handle Event Listeners",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -12,14 +12,20 @@
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
-    "version" : "npm run format && git add -A src",
-    "postversion" : "git push && git push --tags"
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ngehlert/event-helper.git"
   },
-  "keywords": ["Event Handler", "Simple", "Simple Event Handler", "Event Listener", "Listener"],
+  "keywords": [
+    "Event Handler",
+    "Simple",
+    "Simple Event Handler",
+    "Event Listener",
+    "Listener"
+  ],
   "files": [
     "lib/**/*"
   ],
