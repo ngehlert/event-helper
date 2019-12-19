@@ -36,13 +36,14 @@
   },
   "homepage": "https://github.com/ngehlert/event-helper#readme",
   "devDependencies": {
-    "@types/jest": "^24.0.24",
-    "jest": "^24.9.0",
+    "@types/jest": "23.3.14",
+    "jest": "23.6.0",
     "prettier": "^1.19.1",
     "ts-jest": "^24.2.0",
     "tslint": "^5.20.1",
     "tslint-config-airbnb": "^5.11.2",
     "tslint-config-prettier": "^1.18.0",
+    "@babel/types": "^7.7.4",
     "typescript": "^3.7.3"
   }
 }

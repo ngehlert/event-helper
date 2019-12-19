@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
     "target": "es2015",
-    "module": "es2015",
+    "module": "es6",
     "declaration": true,
     "outDir": "./lib",
     "strict": true,
-    "types": []
+    "allowJs": true
   },
   "include": ["src"],
   "exclude": ["node_modules", "**/__tests__/*"]
