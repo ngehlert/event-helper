@@ -4,6 +4,8 @@ This is a small Helper Library that helps you with adding and removing EventList
 
 ## Usage
 
+### Setup
+
 Install via npm
 ```
 npm install @ngehlert/event-helper
@@ -14,9 +16,9 @@ Best used with ES6 imports
 import { EventHelper } from '@ngehlert/event-helper';
 ```
 
-Base usage
-```typescript
-EventHelper.addEventListener('my-event', document, 'keydown', (event: Event) => {
+### Base usage
+```javascript
+EventHelper.addEventListener('my-event', document, 'keydown', (event) => {
     console.log(event);
     // do something here
 });
@@ -25,7 +27,7 @@ EventHelper.addEventListener('my-event', document, 'keydown', (event: Event) => 
 EventHelper.removeEventListener('my-event');
 ```
 
-Usage with method specific context inside a class
+### Usage with method specific context inside a class
 
 ```typescript
 class MyTestClass {
@@ -43,8 +45,8 @@ class MyTestClass {
 ### One Time Event
 
 After executing once the event listener automatically de-registers itself
-```typescript
-EventHelper.oneTimeEventListener(document, 'keydown', (event: Event) => {
+```javascript
+EventHelper.oneTimeEventListener(document, 'keydown', (event) => {
     console.log(event);
     // do something here
 });
@@ -55,8 +57,9 @@ Easy listener management with names. In plain JavaScript the event handling can 
 With this event helper you can just use functions directly and while declaring the event add `.bind(this)` without needing to create a second variable.
 
 Another advantage is if you want to remove the event not in the same spot where you registered it, you don't need to pass the proper reference along just to cancel the event.
-```typescript
-const myMethod = (event: Event) => {
+```javascript
+// Standard JavaScript way
+const myMethod = (event) => {
   // do something
 }
 const myMethodListener = myMethod.bind(this);
@@ -75,3 +78,6 @@ Before commiting run
 ```
 npm run lint && npm run format && npm run test
 ```
+
+## License
+This is provided under the MIT license. Check LICENSE file for more details.
