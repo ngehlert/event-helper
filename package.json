@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ngehlert/simple-event-helper.git"
+    "url": "git+https://github.com/ngehlert/event-helper.git"
   },
   "keywords": ["Event Handler", "Simple", "Simple Event Handler", "Event Listener", "Listener"],
   "files": [
@@ -26,9 +26,9 @@
   "author": "Nicolas Gehlert <info@ngehlert.de>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ngehlert/simple-event-helper/issues"
+    "url": "https://github.com/ngehlert/event-helper/issues"
   },
-  "homepage": "https://github.com/ngehlert/simple-event-helper#readme",
+  "homepage": "https://github.com/ngehlert/event-helper#readme",
   "devDependencies": {
     "@types/jest": "^24.0.24",
     "jest": "^24.9.0",
